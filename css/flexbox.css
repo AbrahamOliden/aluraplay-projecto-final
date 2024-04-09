@@ -1,0 +1,87 @@
+/* Styles with mobile-first approach */
+
+/* Cabecera */
+.cabecera__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+.cabecera__buscar__item {
+    display: none;
+}
+
+/*  Menu lateral */
+.menu__container {
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+}
+
+.menu__lista { /* Las listas del menu permanecen ocultos en dispositivos moviles */
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.menu__lista:first-of-type { /* Solo la primer lista del menu lateral se muestra */
+    display: flex;
+}
+
+.menu__itens {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Rodapie */
+.rodapie__container {
+    display: flex;
+    /* flex-direction: column; 
+    flex-wrap: wrap; */
+    flex-flow: column wrap; /*The twa previous attributes can be summed up in flex-flow*/
+}
+
+/* Seccion superior */
+.superior__seccion__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: scroll;
+    gap: 16px;
+}
+
+@media only screen and (min-width: 834px) {
+    .cabecera__buscar__item {
+        display: block;
+    }
+
+    /* Menu lateral */
+    .menu__container {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        max-width: 75px;
+        height: auto;
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 30px;
+    }
+
+    .menu__itens {
+        gap: 8px;
+    }
+
+    /* Footer */
+    .rodapie__container {
+        justify-content: space-between;
+    }
+}
