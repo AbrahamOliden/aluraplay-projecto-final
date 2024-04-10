@@ -38,14 +38,6 @@
     gap: 5px;
 }
 
-/* Rodapie */
-.rodapie__container {
-    display: flex;
-    /* flex-direction: column; 
-    flex-wrap: wrap; */
-    flex-flow: column wrap; /*The twa previous attributes can be summed up in flex-flow*/
-}
-
 /* Seccion superior */
 .superior__seccion__container {
     display: flex;
@@ -53,6 +45,45 @@
     white-space: nowrap;
     overflow: scroll;
     gap: 16px;
+}
+
+/* Seccion videos */
+
+.videos__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.videos__item {
+    height: 300px;
+    width: 272px;
+    flex-grow: 1;
+}
+
+.descripcion-video {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.detalles__video {
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    gap: 8px;
+}
+
+.detalles__video > h3 {
+    max-height: 38px;
+}
+
+/* Rodapie */
+.rodapie__container {
+    display: flex;
+    /* flex-direction: column; 
+    flex-wrap: wrap; */
+    flex-flow: column wrap; /*The twa previous attributes can be summed up in flex-flow*/
 }
 
 @media only screen and (min-width: 834px) {
@@ -65,7 +96,7 @@
         position: fixed;
         top: 80px;
         left: 0;
-        max-width: 75px;
+        width: 75px;
         height: auto;
     }
 
@@ -83,5 +114,30 @@
     /* Footer */
     .rodapie__container {
         justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .menu__container {
+        width: 240px;
+        overflow: scroll;
+    }
+
+    .menu__lista {
+        display: flex;
+        height: auto;
+        padding: 16px 22px 16px 0;
+        gap: 15px;
+    }
+
+    .menu__lista:nth-child(3), .menu__lista:nth-child(4) {
+        flex-direction: column-reverse;
+    }
+
+    .menu__itens {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        padding-left: 16px;
     }
 }
